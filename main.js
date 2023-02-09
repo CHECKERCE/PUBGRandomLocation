@@ -5,6 +5,12 @@ let size = Math.min(window.innerWidth, window.innerHeight) * 0.95;
 canvas.width = size;
 canvas.height = size;
 
+window.addEventListener('resize', function(){
+	size = Math.min(window.innerWidth, window.innerHeight) * 0.95;
+    canvas.width = size;
+    canvas.height = size;
+})
+
 squareCount = 8;
 lineWidth = 2;
 
@@ -102,7 +108,8 @@ function draw () {
 
             if (sel) {
                 ctx.fillStyle = "white";
-                ctx.font = "30px Arial";
+                fontSize = Math.min(30, squareSize / 2)
+                ctx.font = fontSize + "px Arial";
                 let text = letters[selected.x];
                 if (ol) {
                     //use the letters I to P for all maps smaller than or equal to 8x8 because PUBG does it like that.
@@ -110,7 +117,7 @@ function draw () {
                 } else {
                     text += (selected.y + 1);
                 }
-                ctx.fillText(text, x1 + 10, y1 + sz - 10)
+                ctx.fillText(text, x1 + squareSize * 0.1, y1 + sz - squareSize * 0.1)
             }
         }    
     }
