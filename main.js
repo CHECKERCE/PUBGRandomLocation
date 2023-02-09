@@ -99,7 +99,8 @@ function draw () {
                 ctx.font = "30px Arial";
                 let text = letters[selected.x];
                 if (ol) {
-                    text += letters[selected.y + squareCount];
+                    //use the letters I to P for all maps smaller than or equal to 8x8 because PUBG does it like that.
+                    text += letters[selected.y + Math.max(squareCount, 8)];
                 } else {
                     text += (selected.y + 1);
                 }

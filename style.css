@@ -55,10 +55,14 @@ body {
 
 #input button {
     background-color: rgb(185, 185, 185);
-    border: black;
+    border: rgb(100, 100, 100) 2px solid;
     height: 30px;
 }
 
 #input button:hover {
-    background-color: rgb(183, 141, 210);
+    background-color: rgb(141, 181, 210);
+}
+
+#randomizeButton {
+    width: 100%;
 }
