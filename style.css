@@ -1,6 +1,7 @@
 :root {
     --g1: rgb(98, 0, 234);
     --g2: rgb(236, 64, 122);
+    --accent: rgb(136, 0, 255);
 }
 
 body {
@@ -51,6 +52,7 @@ body {
 
 #input input {
     width: 50%;
+    accent-color: var(--accent);
 }
 
 #input button {
@@ -72,4 +74,13 @@ body {
     height: 30px;
     display: inline-flex;
     margin: 10px;
+}
+
+.inputGroup input {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.inputGroup span {
+    align-self: center;
 }
