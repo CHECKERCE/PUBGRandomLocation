@@ -10,7 +10,9 @@ lineWidth = 2;
 
 sizeSliderElement = document.getElementById("sizeSlider");
 sizeInputElement = document.getElementById("sizeInput");
+
 onlyLettersCheckboxElement = document.getElementById("onlyLettersCheckbox");
+excludeOuterCheckboxElement = document.getElementById("excludeOuterCheckbox");
 
 let selected = {
     x: -1,
@@ -26,8 +28,12 @@ function setSize(v) {
 }
 
 function getRandom() {
-    selected.x = Math.floor(Math.random() * squareCount);
-    selected.y = Math.floor(Math.random() * squareCount);
+    let eo = excludeOuterCheckbox.checked;
+    let min = eo ? 1: 0;
+    let max = eo ? squareCount - 1: squareCount;
+    let span  = max - min;
+    selected.x = Math.floor(Math.random() * span + min);
+    selected.y = Math.floor(Math.random() * span + min);
 }
 
 let mouse = {
