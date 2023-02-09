@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Random Location</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="input">
+        <div>
+            <h1>Size</h1>
+            <form>
+                <input id="sizeSlider" type="range" name="sizeRange" min="2" max="13" value="8" oninput="this.form.sizeInput.value=this.value" />
+                <input id="sizeInput" type="number" name="sizeInput" min="2" max="13" value="8" oninput="this.form.sizeRange.value=this.value" />
+            </form>
+            <br>
+            <button onclick="setSize(8)">8x8</button>
+            <button onclick="setSize(4)">4x4</button>
+        </div>
+        <div>
+            <h1>Random</h1>
+            <button onclick="getRandom()">Randomize</button>
+        </div>
+        <div>
+            <h1>Display</h1>
+            <p>Letters Only</p>
+            <input type="checkbox" name="Only Letters" id="onlyLettersCheckbox" checked="true">
+        </div>
+    </div>
+    
+    <canvas id="canvas"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
